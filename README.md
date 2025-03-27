@@ -49,7 +49,9 @@ This approach ensures smooth bot-switching, maintains clarity in conversations, 
 3. **Extract/Place Files:** Put files in a dedicated folder (e.g., `C:\L4D2-LLMChat`)
 4. **First Run:** Run `L4D2-LLMChat.exe` to generate `settings.json`
 5. **Configure `settings.json`** (See below)
-6. **Run the Application**: Launch `L4D2-LLMChat.exe` before starting L4D2
+   • Change the "Provider" of your choice: OpenAI, Gemini, Mistral, Groq, Ollama
+   • And input your APIs and desired model of your choice, refer to your llm providers for the modelname
+7. **Run the Application**: Launch `L4D2-LLMChat.exe`
 
 ## Configuration (`settings.json`)
 
@@ -81,6 +83,7 @@ This approach ensures smooth bot-switching, maintains clarity in conversations, 
 3. Run `L4D2-LLMChat.exe` (Console window should appear).
 4. Keep the application running while playing L4D2.
 5. Chat messages in-game will now trigger bot responses.
+Note: If at first it will not respond, just try chatting it again or you could check the cmd terminal if it's functioning properly.
 
 ## How It Works
 

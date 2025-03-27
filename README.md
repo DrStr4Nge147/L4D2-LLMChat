@@ -24,7 +24,7 @@ This project is an enhanced fork of **smilz0's original Dot4GPT** ([https://gith
 Since this is a multi-bot instance, certain adjustments in chat formatting can significantly improve response quality. Based on experiments, it's best to avoid commas and formalities when chatting with the bots. The system is optimized for quick, dynamic exchanges, and structuring your input correctly enhances bot responsiveness.
 
 For optimal results:
-- **Start your message with the bot's name,** followed directly by your chat. Example:
+- **Start your message with the bot's name,** followed directly by your chat. Best to avoid commas or any other symbols after the bots' name. Example:
   - `coach how are you doing?`
   - `nick is coach your best buddy?`
 - **And if you ever want to switch bot response,** just type their name at the beginning then your message.

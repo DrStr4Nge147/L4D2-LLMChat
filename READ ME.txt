@@ -1,0 +1,23 @@
+Hello, this is Nic.
+
+You've forked this source code from smilz0's github: https://github.com/smilz0/Dot4GPT
+
+Karon, imong gi modify ang source code and you make a version, where supported ang various LLM providers and also local like ollama.
+
+With the help of aistudio google gemini 2.5 Pro, you manage to make this modification.
+
+Mao pud ni ang steam community niya:
+
+https://steamcommunity.com/workshop/filedetails/discussion/3023020742/3805032265618990484/
+
+But since modified code naman ni, this is how it works:
+
+You just run the Dot4GPT.exe(CMD Terminal ni siya) inside sa Release folder.
+
+For the first time, it will create a settings.json for you.
+
+Then e configure na lang nimo ang settings.json.
+
+Close the Dot4GPT.exe and reopen again, and you're done!
+
+Expiremental pa ni siya, so don't expect nga ang software walay bug. But working man siya 95%.

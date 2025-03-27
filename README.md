@@ -35,8 +35,8 @@ This approach ensures smooth bot-switching, maintains clarity in conversations, 
 ## Requirements
 
 1. **Left 4 Dead 2**
-2. **Left 4 Lib Addon** (Available on Steam Workshop)
-3. **Companion L4D2 Addon** (Handles chat interception and file I/O)
+2. **Left 4 GPT Addon** (Available on Steam Workshop, comes with Left 4 Lib Addon)
+3. **Left 4 Lib Addon** (If not available on your addon)
 4. **.NET Runtime** (Version 6.0 or later) - [Download Here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 5. **API Keys / Local LLMs:**
    * OpenAI, Gemini, Mistral, Groq (API keys required)

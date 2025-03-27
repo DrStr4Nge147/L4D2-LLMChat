@@ -27,6 +27,7 @@ For optimal results:
 - **Start your message with the bot's name,** followed directly by your chat. Example:
   - `coach how are you doing?`
   - `nick is coach your best buddy?`
+- **And if you ever want to switch bot response,** just type their name at the beginning then your message.
 - **Keep interactions concise and direct** for a seamless experience.
 - **You can spam chat**, but it's best to avoid multiple instances of chat at the same time, especially if you're running local LLMs. This prevents excessive resource usage, avoids running multiple requests at once, and helps **reduce hallucinations** in responses.
 

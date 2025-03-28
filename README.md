@@ -53,6 +53,7 @@ This approach ensures smooth bot-switching, maintains clarity in conversations, 
 5. **Configure `settings.json`** (See below)
    • Change the "Provider" of your choice: OpenAI, Gemini, Mistral, Groq, Ollama
    • And input your APIs and desired model of your choice, refer to your llm providers for the model name
+   • If you installed your game in a different drive, change the IOPath directory.
 7. **Run the Application**: Launch `Dot4GPT.exe`
 
 ## Configuration (`settings.json`)

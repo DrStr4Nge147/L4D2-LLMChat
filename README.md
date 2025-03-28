@@ -101,7 +101,7 @@ Alternatively, you can provide separate JSON files for each bot's system prompt,
 ## Running the Application
 
 
-1. Run `Dot4GPT.exe` (If running the first time, settings.json witll automatically be created).
+1. Run `Dot4GPT.exe` (If running the first time, settings.json will be automatically created).
 2. Configure `settings.json` correctly.
 3. Ensure local services (like Ollama) are running if selected.
 4. If your using other free LLM providers, set up your own api key as well.

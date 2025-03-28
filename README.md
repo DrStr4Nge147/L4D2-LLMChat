@@ -37,7 +37,7 @@ This approach ensures smooth bot-switching, maintains clarity in conversations, 
 ## Requirements
 
 1. **Left 4 Dead 2**
-2. **Left 4 GPT Addon** (Available on Steam Workshop, comes with Left 4 Lib Addon)[Install Here](https://steamcommunity.com/sharedfiles/filedetails/?id=3023020742)
+2. **Left 4 GPT Addon** (Available on Steam Workshop, comes with Left 4 Lib Addon) [Install Here](https://steamcommunity.com/sharedfiles/filedetails/?id=3023020742)
 3. **Left 4 Lib Addon** (If not available on your addon)
 4. **.NET Runtime** (Version 6.0 or later) - [Download Here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 5. **API Keys / Local LLMs:**

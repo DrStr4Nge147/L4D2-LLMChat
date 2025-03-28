@@ -9,7 +9,7 @@ This project is an enhanced fork of **smilz0's original Dot4GPT** ([https://gith
 * **Multi-LLM Support:** Connect to various AI services:
   * OpenAI (GPT models)
   * Ollama (Run models like Llama3, Mistral, etc., locally)
-  * Google Gemini
+  * Google (Gemini models)
   * Mistral AI API
   * Groq (Fast Llama3, Mixtral inference)
 * **Single Instance, Multi-Bot:** Run just **one** instance of the application to handle chat for all 8 survivors.

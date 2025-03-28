@@ -99,11 +99,14 @@ Alternatively, you can provide separate JSON files for each bot's system prompt,
 
 ## Running the Application
 
-1. Configure `settings.json` correctly.
-2. Ensure local services (like Ollama) are running if selected.
-3. Run `Dot4GPT.exe` (Console window should appear).
-4. Keep the application running while playing L4D2.
-5. Chat messages in-game will now trigger bot responses.
+
+1. Run `Dot4GPT.exe` (If running the first time, settings.json witll automatically be created).
+2. Configure `settings.json` correctly.
+3. Ensure local services (like Ollama) are running if selected.
+4. If your using other free LLM providers, set up your own api key as well.
+5. Run `Dot4GPT.exe` (Console window should appear).
+6. Keep the application running while playing L4D2.
+7. Chat messages in-game will now trigger bot responses.
 
 Note: If at first it will not respond, just try chatting it again or you could check the cmd terminal if it's functioning properly.
 

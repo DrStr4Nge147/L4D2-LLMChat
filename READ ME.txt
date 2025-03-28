@@ -1,23 +1,7 @@
-Hello, this is Nic.
+1. Configure `settings.json` correctly.
+2. Ensure local services (like Ollama) are running if selected.
+3. Run `Dot4GPT.exe` (Console window should appear).
+4. Keep the application running while playing L4D2.
+5. Chat messages in-game will now trigger bot responses.
 
-You've forked this source code from smilz0's github: https://github.com/smilz0/Dot4GPT
-
-Karon, imong gi modify ang source code and you make a version, where supported ang various LLM providers and also local like ollama.
-
-With the help of aistudio google gemini 2.5 Pro, you manage to make this modification.
-
-Mao pud ni ang steam community niya:
-
-https://steamcommunity.com/workshop/filedetails/discussion/3023020742/3805032265618990484/
-
-But since modified code naman ni, this is how it works:
-
-You just run the Dot4GPT.exe(CMD Terminal ni siya) inside sa Release folder.
-
-For the first time, it will create a settings.json for you.
-
-Then e configure na lang nimo ang settings.json.
-
-Close the Dot4GPT.exe and reopen again, and you're done!
-
-Expiremental pa ni siya, so don't expect nga ang software walay bug. But working man siya 95%.
+Note: If at first it will not respond, just try chatting it again or you could check the cmd terminal if it's functioning properly.

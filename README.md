@@ -118,6 +118,10 @@ Note: If at first it will not respond, just try chatting it again or you could c
 4. The response is written to an output file.
 5. The VScript addon reads the response and makes the bot say it.
 
+## Watch Youtube Demo
+
+Link here: [Left 4 Dead 2 LLM Chat Demo](https://youtu.be/h4ZcGn2E2U4)
+
 ## Acknowledgements
 
 * Based on **Dot4GPT** by smilz0 ([GitHub](https://github.com/smilz0/Dot4GPT))

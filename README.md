@@ -51,8 +51,9 @@ This approach ensures smooth bot-switching, maintains clarity in conversations, 
 3. **Extract/Place Files:** Put files in a dedicated folder (e.g., `C:\L4D2-LLMChat`)
 4. **First Run:** Run `Dot4GPT.exe` to generate `settings.json`
 5. **Configure `settings.json`** (See below)
-   • Change the "Provider" of your choice: OpenAI, Gemini, Mistral, Groq, Ollama
-   • And input your APIs and desired model of your choice, refer to your llm providers for the model name
+   • Change the "Provider" of your choice: **OpenAI, Gemini, Mistral, Groq, Ollama**.
+   
+   • And input your APIs and desired model of your choice, refer to your llm providers for the model name.
    • If you installed your game in a different drive, change the IOPath directory.
 7. **Run the Application**: Launch `Dot4GPT.exe`
 

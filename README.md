@@ -75,7 +75,7 @@ This approach ensures smooth bot-switching, maintains clarity in conversations, 
   "MaxTokens": 60,
   "MaxContext": 5,
   "ResetIdleSeconds": 120,
-  "APIErrors": true,
+  "APIErrors": false,
 }
 ```
 

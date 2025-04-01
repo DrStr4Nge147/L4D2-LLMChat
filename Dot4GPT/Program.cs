@@ -251,8 +251,8 @@ public class Program
         Console.WriteLine($"<- User ({Capitalize(botName)}): {inputText}");
         if (!botStates.TryGetValue(botName, out BotState? currentBotState) || currentBotState == null)
         {
-             Console.WriteLine($"!! Error: Could not find state for bot '{botName}' during processing.");
-             return;
+            Console.WriteLine($"!! Error: Could not find state for bot '{botName}' during processing.");
+            return;
         }
 
         currentBotState.LastInteraction = DateTime.Now;
@@ -297,7 +297,7 @@ public class Program
             Console.WriteLine($"!! LLM Error or processing issue for {botName}: {ex.Message}");
             if (currentSettings.APIErrors) // Assumes Settings has APIErrors property
             {
-                 Console.WriteLine($"   -> LLM Stack Trace: {ex.StackTrace}");
+                Console.WriteLine($"   -> LLM Stack Trace: {ex.StackTrace}");
             }
             try { await File.WriteAllTextAsync(outputFile, replyText); } // Try write default error
             catch { /* Ignore errors writing the error message */ }
@@ -344,7 +344,7 @@ public class Program
         switch (provider)
         {
             case "openai":
-                if (string.IsNullOrWhiteSpace(settings.ApiKey)) throw new ArgumentNullException(nameof(settings.ApiKey), "API key is required for OpenAI provider.");
+                if (string.IsNullOrWhiteSpace(settings.OpenAiApiKey)) throw new ArgumentNullException(nameof(settings.OpenAiApiKey), "API key is required for OpenAI provider.");
                 Console.WriteLine($"Using OpenAI Model: {settings.OpenAiModel}");
                 return new OpenAIServiceWrapper(settings); // Assumes this class exists
 
@@ -360,13 +360,13 @@ public class Program
                 Console.WriteLine($"Using Gemini Model: {settings.GeminiModel}");
                 return new GeminiService(settings); // Assumes this class exists
 
-             case "mistral":
+            case "mistral":
                 if (string.IsNullOrWhiteSpace(settings.MistralApiKey)) throw new ArgumentNullException(nameof(settings.MistralApiKey), "API key is required for Mistral provider.");
                 if (string.IsNullOrWhiteSpace(settings.MistralModel)) throw new ArgumentNullException(nameof(settings.MistralModel), "Model name is required for Mistral provider.");
                 Console.WriteLine($"Using Mistral Model: {settings.MistralModel}");
                 return new MistralService(settings); // Assumes this class exists
 
-             case "groq":
+            case "groq":
                 if (string.IsNullOrWhiteSpace(settings.GroqApiKey)) throw new ArgumentNullException(nameof(settings.GroqApiKey), "API key is required for Groq provider.");
                 if (string.IsNullOrWhiteSpace(settings.GroqModel)) throw new ArgumentNullException(nameof(settings.GroqModel), "Model name is required for Groq provider.");
                 Console.WriteLine($"Using Groq Model: {settings.GroqModel}");
@@ -377,7 +377,7 @@ public class Program
         }
     }
 
-     // --- Helper: Load Hardcoded Default Prompts ---
+    // --- Helper: Load Hardcoded Default Prompts ---
     private static void LoadHardcodedPrompts()
     {
         Console.WriteLine("Loading hardcoded default system prompts...");
@@ -407,8 +407,9 @@ public class Program
             string? assemblyLocation = Assembly.GetEntryAssembly()?.Location;
             baseDirectory = Path.GetDirectoryName(assemblyLocation ?? ".") ?? ".";
         }
-        catch (Exception ex) {
-             Console.WriteLine($"Warning: Could not determine assembly directory. Using current directory for {PromptsFileName}. Error: {ex.Message}");
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Warning: Could not determine assembly directory. Using current directory for {PromptsFileName}. Error: {ex.Message}");
         }
 
         string promptsFilePath = Path.Combine(baseDirectory, PromptsFileName);
@@ -446,16 +447,16 @@ public class Program
 
                 if (!systemPrompts.ContainsKey("_fallback") || string.IsNullOrWhiteSpace(systemPrompts["_fallback"]))
                 {
-                     Console.WriteLine($"Warning: No valid '_fallback' prompt found in {PromptsFileName}. Adding a hardcoded fallback.");
-                     systemPrompts["_fallback"] = "You are {BotName} from Left 4 Dead 2. Respond concisely and in character.";
+                    Console.WriteLine($"Warning: No valid '_fallback' prompt found in {PromptsFileName}. Adding a hardcoded fallback.");
+                    systemPrompts["_fallback"] = "You are {BotName} from Left 4 Dead 2. Respond concisely and in character.";
                 }
 
                 Console.WriteLine($"Successfully loaded {loadedCount} prompts from {PromptsFileName}. Using these prompts.");
             }
             else
             {
-                 Console.WriteLine($"Warning: {PromptsFileName} is empty or could not be deserialized correctly. Loading hardcoded default prompts.");
-                 LoadHardcodedPrompts();
+                Console.WriteLine($"Warning: {PromptsFileName} is empty or could not be deserialized correctly. Loading hardcoded default prompts.");
+                LoadHardcodedPrompts();
             }
         }
         catch (JsonException jsonEx)
@@ -466,9 +467,9 @@ public class Program
         }
         catch (IOException ioEx)
         {
-             Console.WriteLine($"!! Error accessing prompts file {promptsFilePath}: {ioEx.Message}");
-             Console.WriteLine("   Loading hardcoded default prompts as a fallback.");
-             LoadHardcodedPrompts();
+            Console.WriteLine($"!! Error accessing prompts file {promptsFilePath}: {ioEx.Message}");
+            Console.WriteLine("   Loading hardcoded default prompts as a fallback.");
+            LoadHardcodedPrompts();
         }
         catch (Exception ex)
         {
@@ -525,7 +526,7 @@ public class Program
             messageList.RemoveAt(1);
             if (messageList.Count > 1)
             {
-                 messageList.RemoveAt(1);
+                messageList.RemoveAt(1);
             }
         }
     }
@@ -534,10 +535,13 @@ public class Program
     static Settings? LoadSettings()
     {
         string baseDirectory = ".";
-        try {
-             string? assemblyLocation = Assembly.GetEntryAssembly()?.Location;
-             baseDirectory = Path.GetDirectoryName(assemblyLocation ?? ".") ?? ".";
-        } catch (Exception ex) {
+        try
+        {
+            string? assemblyLocation = Assembly.GetEntryAssembly()?.Location;
+            baseDirectory = Path.GetDirectoryName(assemblyLocation ?? ".") ?? ".";
+        }
+        catch (Exception ex)
+        {
             Console.WriteLine($"Warning: Could not determine assembly directory. Using current directory for {SettingsFileName}. Error: {ex.Message}");
         }
         string settingsFilePath = Path.Combine(baseDirectory, SettingsFileName);
@@ -581,15 +585,17 @@ public class Program
                 if (string.IsNullOrWhiteSpace(loaded.IOPath)) { Console.WriteLine("!! Error: 'IOPath' is missing."); isValid = false; }
                 else if (!Directory.Exists(loaded.IOPath))
                 {
-                     Console.WriteLine($"!! Error: IOPath directory does not exist: {loaded.IOPath}");
-                     isValid = false;
+                    Console.WriteLine($"!! Error: IOPath directory does not exist: {loaded.IOPath}");
+                    isValid = false;
                 }
 
                 // Provider specific validation (assumes Settings has these properties)
-                 if (isValid && !string.IsNullOrWhiteSpace(loaded.Provider)) {
+                if (isValid && !string.IsNullOrWhiteSpace(loaded.Provider))
+                {
                     string lowerProvider = loaded.Provider.Trim().ToLowerInvariant();
-                    switch(lowerProvider) {
-                        case "openai": if (string.IsNullOrWhiteSpace(loaded.ApiKey)) { Console.WriteLine("!! Error: OpenAI provider selected, but 'ApiKey' is missing."); isValid = false; } break;
+                    switch (lowerProvider)
+                    {
+                        case "openai": if (string.IsNullOrWhiteSpace(loaded.OpenAiApiKey)) { Console.WriteLine("!! Error: OpenAI provider selected, but 'OpenAiApiKey' is missing."); isValid = false; } break;
                         case "ollama":
                             if (string.IsNullOrWhiteSpace(loaded.OllamaBaseUrl)) { Console.WriteLine("!! Error: Ollama provider selected, but 'OllamaBaseUrl' is missing."); isValid = false; }
                             if (string.IsNullOrWhiteSpace(loaded.OllamaModel)) { Console.WriteLine("!! Error: Ollama provider selected, but 'OllamaModel' is missing."); isValid = false; }
@@ -607,16 +613,16 @@ public class Program
 
                 if (!isValid)
                 {
-                     Console.WriteLine("Settings validation failed. Please correct settings.json and restart.");
-                     return null;
+                    Console.WriteLine("Settings validation failed. Please correct settings.json and restart.");
+                    return null;
                 }
 
                 Console.WriteLine("Settings loaded and validated successfully.");
                 return loaded;
             }
-             catch (JsonException jsonEx) { Console.WriteLine($"!! Error reading settings file {settingsFilePath} (JSON format issue): {jsonEx.Message}"); return null; }
-             catch (IOException ioEx) { Console.WriteLine($"!! Error accessing settings file {settingsFilePath}: {ioEx.Message}"); return null; }
-             catch (Exception e) { Console.WriteLine($"!! Unexpected error loading settings file: {e.ToString()}"); return null; }
+            catch (JsonException jsonEx) { Console.WriteLine($"!! Error reading settings file {settingsFilePath} (JSON format issue): {jsonEx.Message}"); return null; }
+            catch (IOException ioEx) { Console.WriteLine($"!! Error accessing settings file {settingsFilePath}: {ioEx.Message}"); return null; }
+            catch (Exception e) { Console.WriteLine($"!! Unexpected error loading settings file: {e.ToString()}"); return null; }
         }
     }
 
@@ -652,16 +658,16 @@ public class Settings
     public string Provider { get; set; } = "OpenAI"; // Default provider
 
     // --- OpenAI Specific ---
-    public string ApiKey { get; set; } = ""; // Used for OpenAI & potentially others if name is reused
+    public string OpenAiApiKey { get; set; } = ""; // Used for OpenAI & potentially others if name is reused
     public string OpenAiModel { get; set; } = Models.ChatGpt3_5Turbo;
 
     // --- Ollama Specific ---
     public string OllamaBaseUrl { get; set; } = "http://localhost:11434";
-    public string OllamaModel { get; set; } = "llama3";
+    public string OllamaModel { get; set; } = "gemma3:4b";
 
     // --- Gemini Specific --- NEW ---
     public string GeminiApiKey { get; set; } = "";
-    public string GeminiModel { get; set; } = "gemini-1.5-flash-latest"; // Or "gemini-pro", etc.
+    public string GeminiModel { get; set; } = "gemini-2.0-flash"; // Or "gemini-pro", etc.
 
     // --- Mistral Specific --- NEW ---
     public string MistralApiKey { get; set; } = "";
@@ -671,7 +677,7 @@ public class Settings
 
     // --- Groq Specific --- NEW ---
     public string GroqApiKey { get; set; } = "";
-    public string GroqModel { get; set; } = "llama3-8b-8192"; // Or "mixtral-8x7b-32768", "gemma-7b-it" etc.
+    public string GroqModel { get; set; } = "llama-3.1-8b-instant"; // Or "mixtral-8x7b-32768", "gemma-7b-it" etc.
                                                               // Optional: Groq API URL if not using default
                                                               // public string GroqApiUrl { get; set; } = "https://api.groq.com/openai";
 

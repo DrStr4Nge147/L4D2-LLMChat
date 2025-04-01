@@ -14,13 +14,13 @@ public class OpenAIServiceWrapper : ILLMService
     // Constructor takes the settings to get the API key
     public OpenAIServiceWrapper(Settings settings)
     {
-        if (string.IsNullOrEmpty(settings.ApiKey))
+        if (string.IsNullOrEmpty(settings.OpenAiApiKey))
         {
-            throw new ArgumentNullException(nameof(settings.ApiKey), "OpenAI API Key is missing in settings.");
+            throw new ArgumentNullException(nameof(settings.OpenAiApiKey), "OpenAI API Key is missing in settings.");
         }
         _openAiService = new OpenAIService(new OpenAiOptions()
         {
-            ApiKey = settings.ApiKey
+            ApiKey = settings.OpenAiApiKey
         });
     }
 

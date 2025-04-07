@@ -63,7 +63,7 @@ This approach ensures smooth bot-switching, maintains clarity in conversations, 
 {
   "Provider": "Ollama",
   "IOPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Left 4 Dead 2\\left4dead2\\ems\\left4gpt",
-  "ApiKey": "sk-...",
+  "OpenAiApiKey": "sk-...",
   "OpenAiModel": "gpt-3.5-turbo",
   "OllamaBaseUrl": "http://localhost:11434",
   "OllamaModel": "llama3",
